@@ -108,7 +108,7 @@
       return character
     })
 
-    return revisedText.join(revisedText, '')
+    return revisedText.join('')
   }
 
   function handleSubmitClick(text) {
