@@ -141,6 +141,7 @@
     <button
       type="submit"
       class="form-button"
+      tabindex="0"
       @click.prevent="handleSubmitClick(inputText)"
     >
       Convert Text
@@ -152,13 +153,23 @@
     >
       Load Example Text
     </button>
-    <button type="reset" class="form-button" @click.prevent="handleClear()">
+    <button
+      type="reset"
+      class="form-button"
+      tabindex="0"
+      @click.prevent="handleClear()"
+    >
       Clear
     </button>
   </form>
   <label class="input-label">Encoded Text:</label>
   <p class="text-output" dir="rtl">{{ outputText }}</p>
-  <button v-if="isSupported" class="form-button" @click="copy(outputText)">
+  <button
+    v-if="isSupported"
+    class="form-button"
+    tabindex="0"
+    @click="copy(outputText)"
+  >
     <span v-if="!copied">Copy Text</span>
     <span v-else>Copied!</span>
   </button>
@@ -251,19 +262,13 @@
 
   .form-button:active {
     background-color: #edeff2;
-    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+    box-shadow: rgba(137, 32, 236, 0.25) 0 1px 0 inset;
     transition: none 0s;
+    outline: 0;
+    border: 3px solid rgba(137, 32, 236, 0.25);
   }
 
   .form-button:focus {
-    outline: 1px transparent;
-  }
-
-  .form-button:before {
-    display: none;
-  }
-
-  .form-button:-webkit-details-marker {
-    display: none;
+    outline: 3px solid rgba(137, 32, 236, 0.25);
   }
 </style>
