@@ -138,13 +138,23 @@
         dir="rtl"
       ></textarea>
     </label>
-    <button class="form-button" @click.prevent="handleSubmitClick(inputText)">
+    <button
+      type="submit"
+      class="form-button"
+      @click.prevent="handleSubmitClick(inputText)"
+    >
       Convert Text
     </button>
-    <button class="form-button" @click.prevent="handleExampleClick()">
+    <button
+      type="button"
+      class="form-button"
+      @click.prevent="handleExampleClick()"
+    >
       Load Example Text
     </button>
-    <button class="form-button" @click.prevent="handleClear()">Clear</button>
+    <button type="reset" class="form-button" @click.prevent="handleClear()">
+      Clear
+    </button>
   </form>
   <label class="input-label">Encoded Text:</label>
   <p class="text-output" dir="rtl">{{ outputText }}</p>
