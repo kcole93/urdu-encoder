@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Encoder from '../components/Encoder.vue'
+---
+
+<Layout title='Urdu Text Encoder'>
+  <main>
+    <h1>Fix Broken Urdu Text</h1>
+    <div class='instructions'>
+      <p>
+        This tool replaces erroneously inserted Arabic characters with their
+        proper Urdu equivalents, allowing Nastaliq fonts to render properly.
+      </p>
+      <p>
+        Paste your broken text into the <code>Text Input</code> field, and press
+        <code>Convert Text</code> to render the properly-encoded text.
+      </p>
+      <p>
+        <strong>Note:</strong> All text is processed locally in the browser.
+      </p>
+    </div>
+    <Encoder client:load />
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    margin: 2rem 0;
+  }
+
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 100ch;
+  }
+
+  .instructions {
+    line-height: 1.6;
+    font-size: 0.8em;
+    margin: 1rem 0;
+    background: #6b5fc5;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .instructions code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+</style>
