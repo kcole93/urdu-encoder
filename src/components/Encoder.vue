@@ -168,7 +168,6 @@
   .input-label {
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
     display: block;
   }
 
@@ -178,6 +177,7 @@
     min-height: 33vh;
     font-family: 'Cairo', 'Arial', 'Segoe UI', Tahoma, Geneva, Verdana,
       sans-serif;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     border: #24292e;
     border-style: ridge;
