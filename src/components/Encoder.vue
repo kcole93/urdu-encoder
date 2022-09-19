@@ -128,14 +128,16 @@
 
 <template>
   <form>
-    <label class="input-label">Text Input:</label>
-    <textarea
-      id="inputText"
-      v-model="inputText"
-      class="text-input"
-      autocomplete="off"
-      dir="rtl"
-    ></textarea>
+    <label class="input-label"
+      >Text Input:
+      <textarea
+        type="text"
+        v-model="inputText"
+        class="text-input"
+        autocomplete="off"
+        dir="rtl"
+      ></textarea>
+    </label>
     <button class="form-button" @click.prevent="handleSubmitClick(inputText)">
       Convert Text
     </button>
@@ -144,8 +146,8 @@
     </button>
     <button class="form-button" @click.prevent="handleClear()">Clear</button>
   </form>
-  <h2 class="input-label">Encoded Text:</h2>
-  <p class="text-output" readonly dir="rtl">{{ outputText }}</p>
+  <label class="input-label">Encoded Text:</label>
+  <p class="text-output" dir="rtl">{{ outputText }}</p>
   <button v-if="isSupported" class="form-button" @click="copy(outputText)">
     <span v-if="!copied">Copy Text</span>
     <span v-else>Copied!</span>
@@ -212,6 +214,7 @@
     line-height: 20px;
     list-style: none;
     margin-right: 16px;
+    margin-bottom: 1rem;
     padding: 6px 16px;
     position: relative;
     transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
